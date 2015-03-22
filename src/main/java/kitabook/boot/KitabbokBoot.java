@@ -22,6 +22,7 @@ public class KitabbokBoot {
 		// save a couple of topics
 		metier.addTopic(new Topic("PHYS"));
 		metier.addTopic(new Topic("CHMI"));
+		metier.addTopic(new Topic("koka"));
 		
 
 		// fetch all topics
