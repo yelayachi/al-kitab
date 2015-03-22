@@ -20,7 +20,7 @@ public class KitabbokBoot {
 		IMetier metier = context.getBean(IMetier.class);
 
 		// save a couple of topics
-		metier.addTopic(new Topic("PHYS"));
+		//metier.addTopic(new Topic("PHYS"));
 		metier.addTopic(new Topic("CHMI"));
 		metier.addTopic(new Topic("koka"));
 		
