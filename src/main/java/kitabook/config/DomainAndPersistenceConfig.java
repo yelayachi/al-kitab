@@ -27,8 +27,8 @@ public class DomainAndPersistenceConfig {
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		//dataSource.setUrl("jdbc:mysql://localhost:3306/dbrdvmedecins");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/kitabook");
-		dataSource.setUsername("idag");
-		dataSource.setPassword("idag");
+		dataSource.setUsername("root");
+		dataSource.setPassword("root");
 		return dataSource;
 	}
 
