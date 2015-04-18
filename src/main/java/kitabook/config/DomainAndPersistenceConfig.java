@@ -25,7 +25,6 @@ public class DomainAndPersistenceConfig {
 	public DataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		//dataSource.setUrl("jdbc:mysql://localhost:3306/dbrdvmedecins");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/kitabook");
 		dataSource.setUsername("root");
 		dataSource.setPassword("root");

@@ -11,10 +11,6 @@ public class Topic extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 
-	/*@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	protected Long id;*/
-
 	@Column(length = 100)
 	private String name;
 
