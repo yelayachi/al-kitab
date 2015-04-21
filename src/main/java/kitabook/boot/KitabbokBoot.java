@@ -1,9 +1,9 @@
 package kitabook.boot;
 
-import java.util.Date;
-
 import kitabook.config.DomainAndPersistenceConfig;
 import kitabook.entities.Book;
+import kitabook.entities.Contributor;
+import kitabook.entities.Participant;
 import kitabook.entities.Publisher;
 import kitabook.entities.Topic;
 import kitabook.metier.IMetier;
@@ -29,7 +29,9 @@ public class KitabbokBoot {
 		//metier.addTopic(new Topic("DINE"));
 		//metier.addTopic(new Topic("koka"));
 
-		//metier.addPublisher(new Publisher("Kitabook 2", "KITABOOK 2", new Date(2015,01,02)));
+		metier.addPublisher(new Publisher("Kitabook 5", "KITABOOK 5", "28/11/2015"));
+		metier.addContributor((Contributor)new Contributor("Iliass", "Dagha", "Contrib1").build(1L, 1L));
+		metier.addParticipant((Participant)new Participant("iliyo", "dido", "idag", "dagi", "contrib1", "28/11/1986").build(1L, 1L));
 		//Publisher publ3 = new Publisher("Kitabook 4", "KITABOOK 4", new Date(2015,10,02));
 		//metier.addPublisher(publ3);
 		//metier.addBook(new Book(publ3, "livre 1", new Date(2015,01,02), 200,"123456789", 2));
@@ -45,6 +47,12 @@ public class KitabbokBoot {
 		
 		Iterable<Book> books = metier.getAllBooks();
 		display("Books found with findAll():", books);
+		
+		Iterable<Participant> participants = metier.getAllParticipants();
+		display("Participants found with findAll():", participants);
+		
+		Iterable<Contributor> contributors = metier.getAllContributors();
+		display("Contributors found with findAll():", contributors);
 
 		// fetch an individual customer by ID
 		Topic topic = metier.getTopicById(1L);

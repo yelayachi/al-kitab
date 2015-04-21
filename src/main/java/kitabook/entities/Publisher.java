@@ -1,7 +1,5 @@
 package kitabook.entities;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -20,10 +18,10 @@ public class Publisher extends AbstractEntity {
 	private String corporate_name;
 	
 	@Column
-	private Date creation_date;
+	private String creation_date;
 
 	public Publisher(String commercial_name, String corporate_name,
-			Date creation_date) {
+			String creation_date) {
 		super();
 		this.commercial_name = commercial_name;
 		this.corporate_name = corporate_name;
@@ -49,11 +47,11 @@ public class Publisher extends AbstractEntity {
 		this.corporate_name = corporate_name;
 	}
 
-	public Date getCreation_date() {
+	public String getCreation_date() {
 		return creation_date;
 	}
 
-	public void setCreation_date(Date creation_date) {
+	public void setCreation_date(String creation_date) {
 		this.creation_date = creation_date;
 	}
 	

@@ -3,9 +3,13 @@ package kitabook.metier;
 import java.util.List;
 
 import kitabook.entities.Book;
+import kitabook.entities.Contributor;
+import kitabook.entities.Participant;
 import kitabook.entities.Publisher;
 import kitabook.entities.Topic;
 import kitabook.repositories.BookRepository;
+import kitabook.repositories.ContributorRepository;
+import kitabook.repositories.ParticipantRepository;
 import kitabook.repositories.PublisherRepository;
 import kitabook.repositories.TopicRepository;
 
@@ -26,6 +30,10 @@ public class Metier implements IMetier {
 	private BookRepository bookRepository;
 	@Autowired
 	private PublisherRepository publisherRepository;
+	@Autowired
+	private ParticipantRepository participantRepository;
+	@Autowired
+	private ContributorRepository contributorRepository;
 
 	// implémentation interface
 	@Override
@@ -89,5 +97,48 @@ public class Metier implements IMetier {
 	@Override
 	public Publisher getPublisherById(long id) {
 		return publisherRepository.findOne(id);
+	}
+
+	@Override
+	public List<Participant> getAllParticipants() {
+		return Lists.newArrayList(participantRepository.findAll());
+	}
+
+	@Override
+	public Participant addParticipant(Participant participant) {
+		return participantRepository.save(participant);
+	}
+
+	@Override
+	public void deleteParticipant(long idParticipant) {
+		participantRepository.delete(idParticipant);
+		
+	}
+
+	@Override
+	public Participant getParticipantById(long id) {
+		return participantRepository.findOne(id);
+	}
+
+	@Override
+	public List<Contributor> getAllContributors() {
+		// TODO Auto-generated method stub
+		return Lists.newArrayList(contributorRepository.findAll());
+	}
+
+	@Override
+	public Contributor addContributor(Contributor contributor) {
+		return contributorRepository.save(contributor);
+	}
+
+	@Override
+	public void deleteContributor(long idContributor) {
+		contributorRepository.delete(idContributor);
+		
+	}
+
+	@Override
+	public Contributor getContributorById(long id) {
+		return contributorRepository.findOne(id);
 	}
 }

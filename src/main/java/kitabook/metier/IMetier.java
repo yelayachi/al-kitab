@@ -3,6 +3,8 @@ package kitabook.metier;
 import java.util.List;
 
 import kitabook.entities.Book;
+import kitabook.entities.Contributor;
+import kitabook.entities.Participant;
 import kitabook.entities.Publisher;
 import kitabook.entities.Topic;
 
@@ -34,5 +36,23 @@ public interface IMetier {
 	public void deletePublisher(long idPublisher);
 
 	public Publisher getPublisherById(long id);
+	
+	// liste des PARTICIPANT
+	public List<Participant> getAllParticipants();
+
+	public Participant addParticipant(Participant participant);
+
+	public void deleteParticipant(long idParticipant);
+
+	public Participant getParticipantById(long id);
+	
+	// liste des CONTRIBUTOR
+	public List<Contributor> getAllContributors();
+
+	public Contributor addContributor(Contributor contributor);
+
+	public void deleteContributor(long idContributor);
+
+	public Contributor getContributorById(long id);
 
 }
