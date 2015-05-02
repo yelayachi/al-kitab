@@ -17,7 +17,7 @@ public class Participant extends Personne {
 	@Column(name = "mdp", length = 45)
 	private String password;
 	
-	@Column
+	@Column(length = 10)
 	private String birthday;
 
 	public Participant(String login, String password, String firstName,

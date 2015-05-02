@@ -15,7 +15,6 @@ public class Book extends AbstractEntity {
 	
 	private static final long serialVersionUID = 1L;
 
-
 	@Column(length = 100)
 	private String title;
 	
@@ -37,14 +36,13 @@ public class Book extends AbstractEntity {
 	private int idPublisher;
 
 	public Book(Publisher publisher, String title, Date datePublishing, int pagesNumber,
-			String isbn, int idPublisher) {
+			String isbn) {
 		
 		this.publisher = publisher;
 		this.title = title;
 		this.date_publishing = datePublishing;
 		this.pages_number = pagesNumber;
 		this.isbn = isbn;
-		this.idPublisher = idPublisher;
 	}
 	
 	public Book() {
@@ -91,9 +89,17 @@ public class Book extends AbstractEntity {
 		this.idPublisher = idPublisher;
 	}
 	
+	public Publisher getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(Publisher publisher) {
+		this.publisher = publisher;
+	}
+
 	public String toString() {
 
-		return String.format("Topic[%s, %s, %s, %s, %s, %s, %s]", id, version, title, date_publishing, pages_number, isbn, idPublisher);
+		return String.format("Book [%s, %s, %s, %s, %s, %s, %s]", id, version, title, date_publishing, pages_number, isbn, publisher.getCommercial_name());
 	}
 	
 
