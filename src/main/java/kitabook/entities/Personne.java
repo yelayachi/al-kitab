@@ -18,15 +18,27 @@ public class Personne extends AbstractEntity {
 	@Column(length = 45)
 	private String occupation;
 	
+	@Column(length = 320)
+	private String email;
+	
 	
 	public Personne() {
 	}
 
-	public Personne(String firstName, String lastName, String occupation) {
+	public Personne(String firstName, String lastName, String occupation, String email) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.occupation = occupation;
+		this.email = email;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getFirstName() {

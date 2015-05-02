@@ -101,6 +101,5 @@ public class Book extends AbstractEntity {
 
 		return String.format("Book [%s, %s, %s, %s, %s, %s, %s]", id, version, title, date_publishing, pages_number, isbn, publisher.getCommercial_name());
 	}
-	
 
 }

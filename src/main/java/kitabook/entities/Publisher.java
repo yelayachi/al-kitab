@@ -19,16 +19,28 @@ public class Publisher extends AbstractEntity {
 	
 	@Column
 	private String creation_date;
+	
+	@Column(length = 320)
+	private String email;
 
 	public Publisher(String commercial_name, String corporate_name,
-			String creation_date) {
-		super();
+			String creation_date, String email) {
 		this.commercial_name = commercial_name;
 		this.corporate_name = corporate_name;
 		this.creation_date = creation_date;
+		this.email = email;
 	}
 
 	public Publisher() {
+	}
+
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getCommercial_name() {

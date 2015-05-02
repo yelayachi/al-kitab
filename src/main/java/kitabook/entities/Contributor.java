@@ -13,8 +13,8 @@ public class Contributor extends Personne {
 		super();
 	}
 
-	public Contributor(String firstName, String lastName, String occupation) {
-		super(firstName, lastName, occupation);
+	public Contributor(String firstName, String lastName, String occupation, String email) {
+		super(firstName, lastName, occupation, email);
 	}
 
 	public String toString() {
