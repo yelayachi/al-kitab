@@ -1,7 +1,11 @@
 package kitabook.entities;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "adress")
 public class Address extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;

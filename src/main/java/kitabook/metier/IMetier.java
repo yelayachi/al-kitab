@@ -2,6 +2,7 @@ package kitabook.metier;
 
 import java.util.List;
 
+import kitabook.entities.Address;
 import kitabook.entities.Book;
 import kitabook.entities.Contributor;
 import kitabook.entities.Participant;
@@ -54,5 +55,14 @@ public interface IMetier {
 	public void deleteContributor(long idContributor);
 
 	public Contributor getContributorById(long id);
+	
+	// liste des CONTRIBUTOR
+	public List<Address> getAllAdresses();
+
+	public Address addAdress(Address adresse);
+
+	public void deleteAddress(long idAdresse);
+
+	public Address getAddressById(long id);
 
 }

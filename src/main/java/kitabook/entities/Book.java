@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.transaction.annotation.Transactional;
+
 @Entity
 @Table(name = "book")
 public class Book extends AbstractEntity {
@@ -97,9 +99,9 @@ public class Book extends AbstractEntity {
 		this.publisher = publisher;
 	}
 
+	@Transactional
 	public String toString() {
-
-		return String.format("Book [%s, %s, %s, %s, %s, %s, %s]", id, version, title, date_publishing, pages_number, isbn, publisher.getCommercial_name());
+		return String.format("Book [%s, %s, %s, %s, %s, %s]", id, version, title, date_publishing, pages_number, isbn);
 	}
 
 }

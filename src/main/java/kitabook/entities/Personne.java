@@ -1,6 +1,9 @@
 package kitabook.entities;
 
 import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
@@ -21,16 +24,31 @@ public class Personne extends AbstractEntity {
 	@Column(length = 320)
 	private String email;
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "adress_idadress")
+	private Address adresse;
+	
+	// clé étrangère
+	@Column(name = "adress_idadress", insertable = false, updatable = false)
+	private int idAdresse;
 	
 	public Personne() {
 	}
 
-	public Personne(String firstName, String lastName, String occupation, String email) {
-		super();
+	public Personne(String firstName, String lastName, String occupation, String email, Address adresse) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.occupation = occupation;
 		this.email = email;
+		this.adresse = adresse;
+	}
+
+	public Address getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(Address adresse) {
+		this.adresse = adresse;
 	}
 
 	public String getEmail() {

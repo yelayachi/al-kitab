@@ -2,6 +2,9 @@ package kitabook.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,13 +25,22 @@ public class Publisher extends AbstractEntity {
 	
 	@Column(length = 320)
 	private String email;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "adress_idadress")
+	private Address adresse;
+	
+	// clé étrangère
+	@Column(name = "adress_idadress", insertable = false, updatable = false)
+	private int idAdresse;
 
 	public Publisher(String commercial_name, String corporate_name,
-			String creation_date, String email) {
+			String creation_date, String email, Address adresse) {
 		this.commercial_name = commercial_name;
 		this.corporate_name = corporate_name;
 		this.creation_date = creation_date;
 		this.email = email;
+		this.adresse = adresse;
 	}
 
 	public Publisher() {

@@ -1,6 +1,7 @@
 package kitabook.boot;
 
 import kitabook.config.DomainAndPersistenceConfig;
+import kitabook.entities.Address;
 import kitabook.entities.Book;
 import kitabook.entities.Contributor;
 import kitabook.entities.Participant;
@@ -29,9 +30,9 @@ public class KitabbokBoot {
 		//metier.addTopic(new Topic("DINE"));
 		//metier.addTopic(new Topic("koka"));
 
-		metier.addPublisher(new Publisher("Kitabook 5", "KITABOOK 5", "28/11/2015","iliass.dagha@test.com"));
-		metier.addContributor((Contributor)new Contributor("Iliass", "Dagha", "Contrib1","lemommo@test.com").build(1L, 1L));
-		metier.addParticipant((Participant)new Participant("iliyo", "dido", "idag", "dagi", "contrib1", "28/11/1986").build(1L, 1L));
+		//metier.addPublisher(new Publisher("Kitabook 6", "KITABOOK 6", "28/11/2015","iliass.dagha@test.com", metier.addAdress(new Address(5416, "route de Ganges", "34096", "Montpellier", "France"))));
+		//metier.addContributor((Contributor)new Contributor("ili", "dag", "Contrib1","lemommo@test.com", metier.addAdress(new Address(21, "Bocage", "93450", "ILE SAINT DENIS", "France"))).build(1L, 1L));
+		//metier.addParticipant((Participant)new Participant("iyo", "do", "idag", "dagi", "contrib1", "28/11/1986", metier.addAdress(new Address(3, "Bocage", "93450", "ILE SAINT DENIS", "France"))).build(2L, 2L));
 		//Publisher publ3 = new Publisher("Kitabook 4", "KITABOOK 4", new Date(2015,10,02));
 		//metier.addPublisher(publ3);
 		//metier.addBook(new Book(publ3, "livre 1", new Date(2015,01,02), 200,"123456789", 2));
@@ -53,6 +54,9 @@ public class KitabbokBoot {
 		
 		Iterable<Contributor> contributors = metier.getAllContributors();
 		display("Contributors found with findAll():", contributors);
+		
+		Iterable<Address> addresses = metier.getAllAdresses();
+		display("Addresses found with findAll():", addresses);
 
 		// fetch an individual customer by ID
 		Topic topic = metier.getTopicById(1L);

@@ -2,11 +2,13 @@ package kitabook.metier;
 
 import java.util.List;
 
+import kitabook.entities.Address;
 import kitabook.entities.Book;
 import kitabook.entities.Contributor;
 import kitabook.entities.Participant;
 import kitabook.entities.Publisher;
 import kitabook.entities.Topic;
+import kitabook.repositories.AdressRepository;
 import kitabook.repositories.BookRepository;
 import kitabook.repositories.ContributorRepository;
 import kitabook.repositories.ParticipantRepository;
@@ -34,6 +36,8 @@ public class Metier implements IMetier {
 	private ParticipantRepository participantRepository;
 	@Autowired
 	private ContributorRepository contributorRepository;
+	@Autowired
+	private AdressRepository adressRepository;
 
 	// implémentation interface
 	@Override
@@ -122,7 +126,6 @@ public class Metier implements IMetier {
 
 	@Override
 	public List<Contributor> getAllContributors() {
-		// TODO Auto-generated method stub
 		return Lists.newArrayList(contributorRepository.findAll());
 	}
 
@@ -141,4 +144,27 @@ public class Metier implements IMetier {
 	public Contributor getContributorById(long id) {
 		return contributorRepository.findOne(id);
 	}
+
+	@Override
+	public List<Address> getAllAdresses() {
+		return Lists.newArrayList(adressRepository.findAll());
+	}
+
+	@Override
+	public Address addAdress(Address adresse) {
+		return adressRepository.save(adresse);
+	}
+
+	@Override
+	public void deleteAddress(long idAdresse) {
+		adressRepository.delete(idAdresse);
+		
+	}
+
+	@Override
+	public Address getAddressById(long id) {
+		return adressRepository.findOne(id);
+	}
+	
+	
 }

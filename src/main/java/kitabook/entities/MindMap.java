@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.mysql.jdbc.Blob;
+import java.sql.Blob;
 
 @Entity
 @Table(name = "mindmap")

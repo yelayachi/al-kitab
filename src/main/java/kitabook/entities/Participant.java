@@ -7,7 +7,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "participant")
 public class Participant extends Personne {
-
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -21,8 +20,8 @@ public class Participant extends Personne {
 	private String birthday;
 
 	public Participant(String login, String password, String firstName,
-			String lastName, String occupation, String birthday) {
-		super();
+			String lastName, String occupation, String birthday, Address adresse) {
+		super(firstName, lastName, occupation, birthday, adresse);
 		this.login = login;
 		this.password = password;
 		this.birthday = birthday;
