@@ -1,5 +1,6 @@
 package kitabook.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -30,8 +31,20 @@ public class Interestedinparticipant extends AbstractEntity {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="InterestingP_idParticipant")
 	private Participant participant2;
+	
+	@Column(name = "InterstedP_idParticipant", insertable = false, updatable = false)
+	private int idParticipant1;
+	
+	@Column(name = "InterestingP_idParticipant", insertable = false, updatable = false)
+	private int idParticipant2;
 
 	public Interestedinparticipant() {
+	}
+	
+	public Interestedinparticipant(Participant participant1, Participant participant2, String commonTopics) {
+		this.commonTopics = commonTopics;
+		this.participant1 = participant1;
+		this.participant2 = participant2;
 	}
 
 	public String getCommonTopics() {

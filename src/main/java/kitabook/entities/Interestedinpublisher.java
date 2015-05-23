@@ -1,5 +1,6 @@
 package kitabook.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -30,10 +31,21 @@ public class Interestedinpublisher extends AbstractEntity {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="Publisher_idPublisher")
 	private Publisher publisher;
+	
+	@Column(name = "Participant_idParticipant", insertable = false, updatable = false)
+	private int idParticipant;
+	
+	@Column(name = "Publisher_idPublisher", insertable = false, updatable = false)
+	private int idPublisher;
 
 	public Interestedinpublisher() {
 	}
 
+	public Interestedinpublisher(Participant participant, Publisher publisher, String publicationListe) {
+		this.participant = participant;
+		this.publisher = publisher;
+		this.publicationListe = publicationListe;
+	}
 
 	public String getPublicationListe() {
 		return this.publicationListe;
