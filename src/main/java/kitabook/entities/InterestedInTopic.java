@@ -14,7 +14,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Interestedintopic")
-public class Interestedintopic extends AbstractEntity {
+public class InterestedInTopic extends AbstractEntity {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -36,10 +36,10 @@ public class Interestedintopic extends AbstractEntity {
 	@Column(name = "Topic_idTopic", insertable = false, updatable = false)
 	private int idTopic;
 
-	public Interestedintopic() {
+	public InterestedInTopic() {
 	}
 
-	public Interestedintopic(Participant participant, Topic topic, String comment) {
+	public InterestedInTopic(Participant participant, Topic topic, String comment) {
 		this.participant = participant;
 		this.topic = topic;
 		this.comment = comment;

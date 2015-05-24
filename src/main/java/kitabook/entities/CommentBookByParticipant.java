@@ -5,7 +5,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-public class Comment extends AbstractEntity {
+public class CommentBookByParticipant extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -26,14 +26,14 @@ public class Comment extends AbstractEntity {
 	@Column(length = 45)
 	private String comment;
 
-	public Comment(Participant participant, Book book, String comment) {
+	public CommentBookByParticipant(Participant participant, Book book, String comment) {
 		super();
 		this.participant = participant;
 		this.book = book;
 		this.comment = comment;
 	}
 
-	public Comment() {
+	public CommentBookByParticipant() {
 	}
 
 	public Participant getParticipant() {
