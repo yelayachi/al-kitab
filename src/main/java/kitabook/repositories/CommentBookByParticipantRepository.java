@@ -1,4 +1,4 @@
-package Commentbookbyparticipant;
+package kitabook.repositories;
 
 import kitabook.entities.CommentBookByParticipant;
 

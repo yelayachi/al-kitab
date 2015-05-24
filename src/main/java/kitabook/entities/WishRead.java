@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "wishread")
-public class Wishread extends AbstractEntity {
+public class WishRead extends AbstractEntity {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -36,7 +36,7 @@ public class Wishread extends AbstractEntity {
 	@JoinColumn(name="Participant_idParticipant")
 	private Participant participant;
 
-	public Wishread() {
+	public WishRead() {
 	}
 
 	public Date getPlanifiedDate() {
