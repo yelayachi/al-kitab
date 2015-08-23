@@ -54,7 +54,7 @@ import com.google.common.collect.Lists;
 @Service("metier")
 public class Metier implements IMetier {
 
-	// répositories
+	// répositories n
 	/*La valeur du champ ainsi annoté sera initialisée (injectée) par Spring avec la référence 
 	d'un composant Spring du type ou du nom précisés.*/
 	@Autowired
